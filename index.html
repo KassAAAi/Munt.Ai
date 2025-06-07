@@ -56,7 +56,7 @@
     .upload-section input[type="file"] {
       margin-top: 1rem;
     }
-    .download-btn {
+    .download-btn, .linkedin-share-btn {
       margin-top: 1.5rem;
       padding: 0.7rem 1.5rem;
       font-size: 1rem;
@@ -65,6 +65,24 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+    }
+    .counter {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #bbb;
+    }
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .prompt-box {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+      .download-btn, .linkedin-share-btn {
+        width: 80%;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -80,6 +98,8 @@
     <p>Kies een duidelijke portretfoto van jezelf (liefst vooraanzicht).</p>
     <input type="file" accept="image/*">
     <button class="download-btn" onclick="downloadPrompt()">Download AI-prompt</button>
+    <br>
+    <button class="linkedin-share-btn" onclick="shareOnLinkedIn()">🔗 Deel op LinkedIn</button>
   </div>
 
   <h2>🔁 Gebruik deze prompt</h2>
@@ -105,6 +125,10 @@ Design specifications:
 - The coin should look prestigious, powerful, and ancient
   </div>
 
+  <div class="counter">
+    💡 Aantal mensen dat deze prompt gebruikte: <span id="visitorCount">...</span>
+  </div>
+
   <div class="footer">
     Deel jouw munt met de hashtag <strong>#MuntAi</strong> op LinkedIn. <br>
     Een idee van Kas · Rotterdam · MCMLXXX
@@ -121,6 +145,20 @@ Design specifications:
       link.click();
       document.body.removeChild(link);
     }
+
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent("Laat jezelf slaan in goud met #MuntAi 🪙");
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&text=${text}`, '_blank');
+    }
+
+    // Simpele visit teller (alleen visueel, geen backend)
+    document.addEventListener("DOMContentLoaded", () => {
+      let count = localStorage.getItem("muntAiCounter") || 0;
+      count++;
+      localStorage.setItem("muntAiCounter", count);
+      document.getElementById("visitorCount").textContent = count;
+    });
   </script>
 </body>
 </html>
