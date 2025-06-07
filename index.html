@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUNT.AI - Laat jezelf slaan in goud</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 2rem;
+      background-color: #1a1a1a;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .coin-preview {
+      max-width: 400px;
+      width: 90%;
+      margin: 2rem auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px gold;
+    }
+    .prompt-box {
+      background-color: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: left;
+      font-family: monospace;
+      color: #d0d0d0;
+      white-space: pre-wrap;
+    }
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .upload-section {
+      margin: 2rem auto;
+    }
+    .upload-section input[type="file"] {
+      margin-top: 1rem;
+    }
+    .download-btn {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: gold;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MUNT.AI</h1>
+    <p>Laat jezelf vereeuwigen als een Romeinse munt. Gemaakt met AI. Geïnspireerd door keizers. Goud voor je profiel.</p>
+  </header>
+  <img src="voorbeeld_munt_kas.png" alt="Voorbeeld munt" class="coin-preview">
+
+  <div class="upload-section">
+    <h2>📸 Upload jouw foto</h2>
+    <p>Kies een duidelijke portretfoto van jezelf (liefst vooraanzicht).</p>
+    <input type="file" accept="image/*">
+    <button class="download-btn" onclick="downloadPrompt()">Download AI-prompt</button>
+  </div>
+
+  <h2>🔁 Gebruik deze prompt</h2>
+  <div class="prompt-box" id="promptText">
+Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar.
+
+The portrait should include:
+- A laurel wreath (crown of leaves) on the head
+- A Roman imperial robe (toga)
+- Distinct facial features with modern eyeglasses (if present)
+
+The edge of the coin must include engraved Latin-style inscriptions:
+- At the top: "MUNT.AI"
+- On the left: "[FIRST NAME]"
+- On the right: "[CITY]"
+- At the bottom: "[BIRTH YEAR IN ROMAN NUMERALS]"
+
+Design specifications:
+- The gold should look rich, slightly aged, and glistening
+- The relief should be deeply engraved and clearly visible
+- The coin’s rim should have authentic Roman beading or edge pattern
+- The background should be dark or neutral to highlight the golden shine
+- The coin should look prestigious, powerful, and ancient
+  </div>
+
+  <div class="footer">
+    Deel jouw munt met de hashtag <strong>#MuntAi</strong> op LinkedIn. <br>
+    Een idee van Kas · Rotterdam · MCMLXXX
+  </div>
+
+  <script>
+    function downloadPrompt() {
+      const promptText = document.getElementById('promptText').innerText;
+      const blob = new Blob([promptText], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'munt_ai_prompt.txt';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
