@@ -12,11 +12,6 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      position: relative;
-    }
-    main {
-      position: relative;
-      z-index: 2;
     }
     header {
       padding: 2rem;
@@ -39,23 +34,6 @@
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 0 20px gold;
-    }
-    .prompt-box {
-      background-color: #1f1f1f;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 2rem auto;
-      max-width: 800px;
-      text-align: left;
-      font-family: monospace;
-      color: #d0d0d0;
-      white-space: pre-wrap;
-    }
-    .footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #888;
     }
     .upload-section {
       margin: 2rem auto;
@@ -81,36 +59,30 @@
       box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
       transform: scale(1.03);
     }
-    .counter {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      color: #bbb;
+    .prompt-box {
+      background-color: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: left;
+      font-family: monospace;
+      color: #d0d0d0;
+      white-space: pre-wrap;
     }
-    .pillar-left,
-    .pillar-right {
-      position: fixed;
-      top: 0;
-      width: 150px;
-      height: 100vh;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top center;
-      opacity: 0.8;
-      z-index: 0;
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
     }
-    .pillar-left {
-      left: 0;
-      background-image: url('roman_pillar_left.jpg');
-    }
-    .pillar-right {
-      right: 0;
-      background-image: url('roman_pillar_right.jpg');
-    }
-    @media screen and (max-width: 768px) {
-      .pillar-left,
-      .pillar-right {
-        display: none;
-      }
+    .muntonderaan {
+      margin-top: 4rem;
+      max-width: 300px;
+      width: 80%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     @media screen and (max-width: 600px) {
       h1 {
@@ -128,24 +100,25 @@
   </style>
 </head>
 <body>
-  <div class="pillar-left"></div>
-  <div class="pillar-right"></div>
-  <main>
-    <header>
-      <h1>MUNT.AI</h1>
-      <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
-    </header>
-    <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
-    <div class="upload-section">
-      <label for="file-upload">Upload jouw foto:</label>
-      <input type="file" id="file-upload" accept="image/*">
-      <br>
-      <button class="download-btn">Download jouw munt</button>
-      <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
-    </div>
-    <img src="linkedin_profielfoto_mockup.jpg" alt="LinkedIn voorbeeld" style="max-width: 100%; margin: 2rem auto; display: block;">
-    <div class="prompt-box">
-      Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
+  <header>
+    <h1>MUNT.AI</h1>
+    <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
+  </header>
+
+  <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
+
+  <div class="upload-section">
+    <label for="file-upload">Upload jouw foto:</label>
+    <input type="file" id="file-upload" accept="image/*">
+    <br>
+    <button class="download-btn">Download jouw munt</button>
+    <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
+  </div>
+
+  <img src="linkedin_profielfoto_mockup.jpg" alt="LinkedIn voorbeeld" style="max-width: 100%; margin: 2rem auto; display: block;">
+
+  <div class="prompt-box">
+Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
 
 - A laurel wreath (crown of leaves) on the head
 - A Roman imperial robe (toga)
@@ -165,10 +138,13 @@ Design specifications:
 - The coin’s rim should have authentic Roman beading or edge pattern
 - The background should be dark or neutral to highlight the golden shine
 - The coin should look prestigious, powerful, and ancient
-    </div>
-    <div class="footer">
-      © By KAS · Creator · Est 2025
-    </div>
-  </main>
+  </div>
+
+  <div class="footer">
+    © By KAS · Creator · Est 2025
+  </div>
+
+  <img src="jouw_munt.jpg" alt="Munt onderaan" class="muntonderaan">
+
 </body>
 </html>
