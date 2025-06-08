@@ -91,9 +91,20 @@
       white-space: pre-wrap;
     }
     .visitor-counter {
-      margin-top: 1rem;
+      margin-top: 2rem;
       font-size: 1rem;
       color: #ccc;
+    }
+    .scroll-down {
+      font-size: 2rem;
+      color: #ffd700;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      margin-top: -1rem;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
     }
     .city-selector {
       margin: 2rem auto;
@@ -146,6 +157,8 @@
   </header>
 
   <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
+
+  <div class="scroll-down" onclick="scrollToPrompt()">⬇️</div>
 
   <div class="upload-section">
     <a href="https://www.linkedin.com/in/kasper-lagendijk-a856076" target="_blank">
@@ -218,6 +231,9 @@ Design specifications:
   </div>
 
   <script>
+    function scrollToPrompt() {
+      document.getElementById("promptText").scrollIntoView({ behavior: "smooth" });
+    }
     function copyPrompt() {
       const promptText = document.getElementById("promptText").innerText;
       navigator.clipboard.writeText(promptText).then(() => {
