@@ -73,18 +73,25 @@
       color: #d0d0d0;
       white-space: pre-wrap;
     }
+    .visitor-counter {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .city-selector {
+      margin-top: 2rem;
+      color: #ccc;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
     .footer {
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #888;
-    }
-    .muntonderaan {
-      margin-top: 4rem;
-      max-width: 300px;
-      width: 80%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
     @media screen and (max-width: 600px) {
       h1 {
@@ -107,7 +114,7 @@
     <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
   </header>
 
-  <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
+  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
 
   <div class="upload-section">
     <label for="file-upload">Upload jouw foto:</label>
@@ -115,6 +122,26 @@
     <br>
     <button class="download-btn">Download jouw munt</button>
     <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
+  </div>
+
+  <div class="city-selector">
+    <label for="roman-city">Romeinse naam van jouw stad:</label>
+    <select id="roman-city">
+      <option value="ROTTERODAMUM">Rotterdam → Rotterodamum</option>
+      <option value="ULTRAJECTUM">Utrecht → Ultrajectum</option>
+      <option value="TRAJECTUM AD MOSAM">Maastricht → Trajectum ad Mosam</option>
+      <option value="LUGDUNUM BATAVORUM">Leiden → Lugdunum Batavorum</option>
+      <option value="NEOMAGUS">Nijmegen → Neomagus</option>
+      <option value="GRONINGAE">Groningen → Groningae</option>
+      <option value="HAGA COMITIS">Den Haag → Haga Comitis</option>
+      <option value="HARLINGA">Harlingen → Harlinga</option>
+      <option value="AMSTELLADAMUM">Amsterdam → Amstelladamum</option>
+      <option value="FLAVIOBATAVODAMUM">IJmuiden → Flaviobatavodamum</option>
+    </select>
+  </div>
+
+  <div class="visitor-counter">
+    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
   </div>
 
   <div class="prompt-box">
@@ -143,8 +170,5 @@ Design specifications:
   <div class="footer">
     © By KAS · Creator · Est 2025
   </div>
-
-  <img src="jouw_munt.jpg" alt="Munt onderaan" class="muntonderaan">
-
 </body>
 </html>
