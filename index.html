@@ -111,10 +111,20 @@
   <div class="upload-section">
     <h2>📸 Upload jouw foto</h2>
     <p>Kies een duidelijke portretfoto van jezelf (liefst vooraanzicht).</p>
-    <input type="file" accept="image/*">
+    <input type="file" accept="image/*" onchange="previewImage(event)">
     <button class="download-btn" onclick="downloadPrompt()">Download AI-prompt</button>
     <br>
     <button class="linkedin-share-btn" onclick="shareOnLinkedIn()">🔗 Deel op LinkedIn</button>
+    <p style="margin-top: 1rem; font-size: 1rem; font-weight: bold;">
+      🖼️ Gebruik jouw munt als profielfoto op LinkedIn – laat je netwerk zien wie je bent!
+    </p>
+    <p style="margin-top: 1rem; font-size: 1rem; font-weight: bold;">
+  🔍 Bekijk hieronder hoe jouw munt eruitziet als LinkedIn-profiel!
+</p>
+<div style="position: relative; width: 280px; margin: 1rem auto;">
+  <img src="linkedin_profielfoto_mockup.jpg" alt="Voorbeeld profielfoto achtergrond" style="width: 100%; border-radius: 8px; box-shadow: 0 0 12px rgba(255,215,0,0.2);">
+  <img id="mockupProfileImg" src="munt_ai_voorbeeld.jpg" alt="Jouw munt als profielfoto" style="position: absolute; top: 22px; left: 22px; width: 75px; height: 75px; border-radius: 50%; border: 3px solid white; object-fit: cover;">
+</div>
   </div>
 
   <h2>🔁 Gebruik deze prompt</h2>
@@ -138,6 +148,7 @@ Design specifications:
 - The gold should look rich, slightly aged, and glistening
 - The relief should be deeply engraved and clearly visible
 - The coin’s rim should have authentic Roman beading or edge pattern
+- Include additional decorative embellishments on the outer rim such as starbursts, dots, or laurel elements in relief and shadow, similar to historic Roman aurei
 - The background should be dark or neutral to highlight the golden shine
 - The coin should look prestigious, powerful, and ancient
   </div>
@@ -210,6 +221,20 @@ Design specifications:
       const result = document.getElementById("latinResult");
       result.textContent = value ? `Latijnse naam: ${value}` : "";
     }
-  </script>
+  function previewImage(event) {
+  const input = event.target;
+  const file = input.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const preview = document.querySelector('.coin-preview');
+      const mockup = document.getElementById('mockupProfileImg');
+      preview.src = e.target.result;
+      if (mockup) mockup.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+</script>
 </body>
 </html>
