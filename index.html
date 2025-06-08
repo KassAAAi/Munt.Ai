@@ -66,7 +66,7 @@
     .upload-section input[type="file"] {
       margin-top: 1rem;
     }
-    .download-btn, .linkedin-share-btn {
+    .download-btn, .linkedin-share-btn, .copy-btn {
       margin-top: 1.5rem;
       padding: 0.8rem 2rem;
       font-size: 1rem;
@@ -79,7 +79,7 @@
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
     }
-    .download-btn:hover, .linkedin-share-btn:hover {
+    .download-btn:hover, .linkedin-share-btn:hover, .copy-btn:hover {
       background-color: #fff6b0;
       box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
       transform: scale(1.03);
@@ -125,7 +125,7 @@
         padding: 0.5rem;
         font-size: 0.9rem;
       }
-      .download-btn, .linkedin-share-btn {
+      .download-btn, .linkedin-share-btn, .copy-btn {
         width: 80%;
         font-size: 1rem;
       }
@@ -137,7 +137,6 @@
     <h1>MUNT.AI</h1>
     <div class="subtitle">Munt jezelf in goud</div>
     <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy!</div>
-    <p>Upload je foto en word vereeuwigd als keizer op een Romeinse munt. De digitale hype van nu, met een historische twist.</p>
   </header>
 
   <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
@@ -166,7 +165,7 @@
     </select>
   </div>
 
-  <div class="prompt-box">
+  <div class="prompt-box" id="promptText">
 Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
 
 - A laurel wreath (crown of leaves) on the head
@@ -189,6 +188,8 @@ Design specifications:
 - The coin should look prestigious, powerful, and ancient
   </div>
 
+  <button class="copy-btn" onclick="copyPrompt()">📋 Kopieer prompt</button>
+
   <div class="visitor-counter">
     🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
   </div>
@@ -197,5 +198,18 @@ Design specifications:
     Vita brevis, gloria aeterna. <br>
     © By KAS · Creator · Est 2025
   </div>
+
+  <script>
+    function copyPrompt() {
+      const promptText = document.getElementById("promptText").innerText;
+      navigator.clipboard.writeText(promptText).then(() => {
+        alert("Prompt gekopieerd!");
+        let count = localStorage.getItem("visitorCount") || 1729;
+        count++;
+        localStorage.setItem("visitorCount", count);
+        document.getElementById("visitorCount").innerText = count.toLocaleString();
+      });
+    }
+  </script>
 </body>
 </html>
