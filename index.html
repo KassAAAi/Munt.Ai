@@ -60,12 +60,6 @@
       z-index: 1;
       position: relative;
     }
-    .upload-section {
-      margin: 2rem auto;
-    }
-    .upload-section input[type="file"] {
-      margin-top: 1rem;
-    }
     .linkedin-share-btn, .copy-btn {
       margin-top: 1.5rem;
       padding: 0.8rem 2rem;
@@ -154,12 +148,13 @@
   <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
 
   <div class="upload-section">
-    <label for="file-upload">Upload jouw foto:</label>
-    <input type="file" id="file-upload" accept="image/*">
-    <br>
     <a href="https://www.linkedin.com/in/kasper-lagendijk-a856076" target="_blank">
       <button class="linkedin-share-btn">Connect met KAS op LinkedIN, Managing Director Munt.Ai</button>
     </a>
+  </div>
+
+  <div class="visitor-counter">
+    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
   </div>
 
   <div class="prompt-box" id="promptText">
@@ -183,10 +178,6 @@ Design specifications:
 - The coin’s rim should have authentic Roman beading or edge pattern
 - The background should be dark or neutral to highlight the golden shine
 - The coin should look prestigious, powerful, and ancient
-  </div>
-
-  <div class="visitor-counter">
-    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
   </div>
 
   <div class="city-selector">
