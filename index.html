@@ -86,6 +86,41 @@
         font-size: 1rem;
       }
     }
+      .spinning-coin {
+      animation: spin 6s linear infinite;
+      transform-style: preserve-3d;
+      position: relative;
+      z-index: 1;
+    }
+    .spinning-coin::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      animation: shimmer 2s infinite linear;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .spinning-coin:hover {
+      animation-play-state: paused;
+    }
+    .spinning-coin:hover {
+      animation-play-state: paused;
+    }
+    @keyframes spin {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 100% 0; }
+    }
+      100% { transform: rotateY(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -93,7 +128,7 @@
     <h1>MUNT.AI</h1>
     <p>Laat jezelf vereeuwigen als een Romeinse munt. Gemaakt met AI. Geïnspireerd door keizers. Goud voor je profiel.</p>
   </header>
-  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
+  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview spinning-coin">
 
   <div class="upload-section">
     <h2>📸 Upload jouw foto</h2>
@@ -113,10 +148,12 @@ The portrait should include:
 - A Roman imperial robe (toga)
 - Distinct facial features with modern eyeglasses (if present)
 
-The edge of the coin must include engraved Latin-style inscriptions:
+The engraved Latin-style inscriptions must be placed along the circular outer edge of the coin (not in horizontal alignment, but curved following the rim of the coin), just like authentic Roman coins.
+
+The edge of the coin must include:
 - At the top: "MUNT.AI"
 - On the left: "[FIRST NAME]"
-- On the right: "[CITY]"
+- On the right: the Roman-era Latin name of the user's birth city (e.g., use "ROTTERODAMUM" for Rotterdam)
 - At the bottom: "[BIRTH YEAR IN ROMAN NUMERALS]"
 
 Design specifications:
@@ -127,14 +164,29 @@ Design specifications:
 - The coin should look prestigious, powerful, and ancient
   </div>
 
+  <h3>🇳🇱 Romeinse stadsnamen (voor inspiratie)</h3>
+  <p>Selecteer jouw stad om de Latijnse naam te zien:</p>
+  <select onchange="updateLatinName(this.value)" style="padding: 0.5rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+    <option value="">-- Kies een stad --</option>
+    <option value="Rotterodamum">🏛️ Rotterdam</option>
+    <option value="Amstelodamum">🛶 Amsterdam</option>
+    <option value="Traiectum">⛪ Utrecht</option>
+    <option value="Noviomagus">🏺 Nijmegen</option>
+    <option value="Lugdunum Batavorum">📜 Leiden</option>
+    <option value="Hagae Comitis">⚖️ Den Haag</option>
+    <option value="Mosae Trajectum">🌉 Maastricht</option>
+    <option value="Groninga">🌾 Groningen</option>
+  </select>
+  <p id="latinResult" style="margin-top: 1rem; font-size: 1.2rem;"></p>
+
   <div class="counter">
     💡 Aantal mensen dat deze prompt gebruikte: <span id="visitorCount">...</span>
   </div>
 
   <div class="footer">
-    Deel jouw munt met de hashtag <strong>#MuntAi</strong> op LinkedIn. <br>
-    
-  </div>
+    Deel jouw munt met de hashtag <strong>#MuntAi</strong> op LinkedIn.<br>
+    <span style="font-size: 0.8rem; display: block; margin-top: 0.5rem;">&copy; By KAS · Est. 2025</span>
+</div>
 
   <script>
     function downloadPrompt() {
@@ -161,6 +213,10 @@ Design specifications:
       localStorage.setItem("muntAiCounter", count);
       document.getElementById("visitorCount").textContent = count;
     });
+  function updateLatinName(value) {
+      const result = document.getElementById("latinResult");
+      result.textContent = value ? `Latijnse naam: ${value}` : "";
+    }
   </script>
 </body>
 </html>
