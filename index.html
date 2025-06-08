@@ -60,13 +60,21 @@
     }
     .download-btn, .linkedin-share-btn {
       margin-top: 1.5rem;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 2rem;
       font-size: 1rem;
-      background-color: gold;
-      color: black;
-      border: none;
-      border-radius: 6px;
+      background-color: #ffd700;
+      color: #1a1a1a;
+      border: 2px solid #e0c200;
+      border-radius: 30px;
       cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    }
+    .download-btn:hover, .linkedin-share-btn:hover {
+      background-color: #fff6b0;
+      box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
+      transform: scale(1.03);
     }
     .counter {
       margin-top: 2rem;
@@ -86,37 +94,7 @@
         font-size: 1rem;
       }
     }
-      .spinning-coin {
-      animation: spin 6s linear infinite;
-      transform-style: preserve-3d;
-      position: relative;
-      z-index: 1;
-    }
-    .spinning-coin::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-      animation: shimmer 2s infinite linear;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .spinning-coin:hover {
-      animation-play-state: paused;
-    }
-    .spinning-coin:hover {
-      animation-play-state: paused;
-    }
-    @keyframes spin {
-      0% { transform: rotateY(0deg); }
-      100% { transform: rotateY(360deg); }
-    }
-    @keyframes shimmer {
-      0% { background-position: -100% 0; }
+      
       100% { background-position: 100% 0; }
     }
       100% { transform: rotateY(360deg); }
@@ -128,7 +106,7 @@
     <h1>MUNT.AI</h1>
     <p>Laat jezelf vereeuwigen als een Romeinse munt. Gemaakt met AI. Geïnspireerd door keizers. Goud voor je profiel.</p>
   </header>
-  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview spinning-coin">
+  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
 
   <div class="upload-section">
     <h2>📸 Upload jouw foto</h2>
@@ -176,6 +154,19 @@ Design specifications:
     <option value="Hagae Comitis">⚖️ Den Haag</option>
     <option value="Mosae Trajectum">🌉 Maastricht</option>
     <option value="Groninga">🌾 Groningen</option>
+    <option value="Harlingia">⚓ Harlingen</option>
+    <option value="Batavodurum">🛡️ Batavodurum (bij Nijmegen)</option>
+    <option value="Forum Hadriani">🏛️ Voorburg</option>
+    <option value="Fectio">🪖 Vechten (Utrecht-regio)</option>
+    <option value="Batavia">🏞️ Lelystad / Almere</option>
+    <option value="Frisia">🐑 Friesland / Leeuwarden</option>
+    <option value="Trajectum ad Mosam">🛤️ Roermond</option>
+    <option value="Canninefates">⚔️ Katwijk</option>
+    <option value="Batavodurum Novum">🪶 Tiel</option>
+    <option value="Tabularia">📜 Zutphen</option>
+    <option value="Rhenus">🏞️ Arnhem</option>
+    <option value="Bergium">⛏️ Bergen op Zoom</option>
+    <option value="Batavorum Forum">🏛️ Nijmegen-Oost</option>
   </select>
   <p id="latinResult" style="margin-top: 1rem; font-size: 1.2rem;"></p>
 
@@ -186,8 +177,10 @@ Design specifications:
   <div class="footer">
     Deel jouw munt met de hashtag <strong>#MuntAi</strong> op LinkedIn.<br>
     <span style="font-size: 0.8rem; display: block; margin-top: 0.5rem;">&copy; By KAS · Est. 2025</span>
-</div>
-
+<p style="margin-top: 2rem; font-size: 1rem;">
+      Heb je nog geen ChatGPT account? <a href="https://chat.openai.com" target="_blank" style="color: #ffd700; text-decoration: underline;">Maak er gratis één aan via chat.openai.com</a>.
+    </p>
+  </div>
   <script>
     function downloadPrompt() {
       const promptText = document.getElementById('promptText').innerText;
