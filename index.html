@@ -102,7 +102,7 @@
       color: #ccc;
     }
     .city-selector {
-      margin-top: 2rem;
+      margin: 2rem auto;
       color: #ccc;
     }
     select {
@@ -136,7 +136,7 @@
   <header>
     <h1>MUNT.AI</h1>
     <div class="subtitle">Munt jezelf in goud</div>
-    <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy op LinkedIN!</div>
+    <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy!</div>
   </header>
 
   <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
@@ -147,22 +147,6 @@
     <br>
     <button class="download-btn">Download jouw munt</button>
     <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
-  </div>
-
-  <div class="city-selector">
-    <label for="roman-city">Extra inspiratie! Romeinse naam van jouw stad:</label>
-    <select id="roman-city">
-      <option value="ROTTERODAMUM">Rotterdam → Rotterodamum</option>
-      <option value="ULTRAJECTUM">Utrecht → Ultrajectum</option>
-      <option value="TRAJECTUM AD MOSAM">Maastricht → Trajectum ad Mosam</option>
-      <option value="LUGDUNUM BATAVORUM">Leiden → Lugdunum Batavorum</option>
-      <option value="NEOMAGUS">Nijmegen → Neomagus</option>
-      <option value="GRONINGAE">Groningen → Groningae</option>
-      <option value="HAGA COMITIS">Den Haag → Haga Comitis</option>
-      <option value="HARLINGA">Harlingen → Harlinga</option>
-      <option value="AMSTELLADAMUM">Amsterdam → Amstelladamum</option>
-      <option value="FLAVIOBATAVODAMUM">IJmuiden → Flaviobatavodamum</option>
-    </select>
   </div>
 
   <div class="prompt-box" id="promptText">
@@ -188,10 +172,31 @@ Design specifications:
 - The coin should look prestigious, powerful, and ancient
   </div>
 
+  <div class="city-selector">
+    <label for="roman-city">Romeinse naam van jouw stad:</label>
+    <select id="roman-city">
+      <option value="ROTTERODAMUM">Rotterdam → Rotterodamum</option>
+      <option value="ULTRAJECTUM">Utrecht → Ultrajectum</option>
+      <option value="TRAJECTUM AD MOSAM">Maastricht → Trajectum ad Mosam</option>
+      <option value="LUGDUNUM BATAVORUM">Leiden → Lugdunum Batavorum</option>
+      <option value="NEOMAGUS">Nijmegen → Neomagus</option>
+      <option value="GRONINGAE">Groningen → Groningae</option>
+      <option value="HAGA COMITIS">Den Haag → Haga Comitis</option>
+      <option value="HARLINGA">Harlingen → Harlinga</option>
+      <option value="AMSTELLADAMUM">Amsterdam → Amstelladamum</option>
+      <option value="FLAVIOBATAVODAMUM">IJmuiden → Flaviobatavodamum</option>
+      <option value="BATAVODAMUM">Dordrecht → Batavodamum</option>
+      <option value="CAMPUS MARTIS">Kampen → Campus Martis</option>
+      <option value="NOVIOMAGUS">Venlo → Noviomagus</option>
+      <option value="HERCULANEUM">Heerlen → Herculaneum</option>
+      <option value="TRAJECTUM MAIOR">Zutphen → Trajectum Maior</option>
+    </select>
+  </div>
+
   <button class="copy-btn" onclick="copyPrompt()">📋 Kopieer prompt</button>
 
   <div class="visitor-counter">
-    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
+    🔥 Al <span id="visitorCount">1</span> bezoekers gebruikten deze prompt!
   </div>
 
   <div class="footer">
