@@ -12,10 +12,14 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     header {
       padding: 2rem;
       background-color: #1a1a1a;
+      position: relative;
+      z-index: 2;
     }
     h1 {
       font-size: 3rem;
@@ -81,6 +85,32 @@
       font-size: 1.1rem;
       color: #bbb;
     }
+    .pillar-left,
+    .pillar-right {
+      position: fixed;
+      top: 0;
+      width: 150px;
+      height: 100vh;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    .pillar-left {
+      left: 0;
+      background-image: url('roman_pillar_left.jpg');
+    }
+    .pillar-right {
+      right: 0;
+      background-image: url('roman_pillar_right.jpg');
+    }
+    @media screen and (max-width: 768px) {
+      .pillar-left,
+      .pillar-right {
+        display: none;
+      }
+    }
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -94,15 +124,48 @@
         font-size: 1rem;
       }
     }
-    @media screen and (max-width: 768px) {
-      .pillar-left,
-      .pillar-right {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="pillar-left" style="position: absolute; top: 0; left: 0; width: 200px; height: 100%; background: url('roman_pillar_left.jpg') no-repeat top center / cover; z-index: 0; opacity: 0.8;"></div>
-  <div class="pillar-right" style="position: absolute; top: 0; right: 0; width: 200px; height: 100%; background: url('roman_pillar_right.jpg') no-repeat top center / cover; z-index: 0; opacity: 0.8;"></div>
-  <!-- De rest van je HTML blijft hier ongewijzigd -->
+  <div class="pillar-left"></div>
+  <div class="pillar-right"></div>
+  <header>
+    <h1>MUNT.AI</h1>
+    <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
+  </header>
+  <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
+  <div class="upload-section">
+    <label for="file-upload">Upload jouw foto:</label>
+    <input type="file" id="file-upload" accept="image/*">
+    <br>
+    <button class="download-btn">Download jouw munt</button>
+    <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
+  </div>
+  <img src="linkedin_profielfoto_mockup.jpg" alt="LinkedIn voorbeeld" style="max-width: 100%; margin: 2rem auto; display: block;">
+  <div class="prompt-box">
+    Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
+
+- A laurel wreath (crown of leaves) on the head
+- A Roman imperial robe (toga)
+- Distinct facial features with modern eyeglasses
+
+The engraved Latin-style inscriptions must be placed along the circular outer edge of the coin (not in horizontal alignment, but curved following the rim of the coin), just like authentic Roman coins.
+
+The edge of the coin must include:
+- At the top: "MUNT.AI"
+- On the left: "[ROEPNAAM]"
+- On the right: "[ROMEINSE STADNAAM]"
+- At the bottom: "[GEBOORTEJAAR IN ROMEINSE CIJFERS]"
+
+Design specifications:
+- The gold should look rich, slightly aged, and glistening
+- The relief should be deeply engraved and clearly visible
+- The coin’s rim should have authentic Roman beading or edge pattern
+- The background should be dark or neutral to highlight the golden shine
+- The coin should look prestigious, powerful, and ancient
+  </div>
+  <div class="footer">
+    © By KAS · Creator · Est 2025
+  </div>
+</body>
+</html>
