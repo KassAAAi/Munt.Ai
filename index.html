@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUNT.AI - Laat jezelf slaan in goud</title>
+  <title>MUNT.AI - Munt jezelf in goud</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,10 +16,33 @@
     header {
       padding: 2rem;
       background-color: #1a1a1a;
+      position: relative;
+      overflow: hidden;
     }
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: gold;
+      margin-bottom: 0.5rem;
+      animation: shine 4s infinite linear;
+      background: linear-gradient(90deg, gold, #fff8b0, gold);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtext {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      color: #e0e0e0;
+    }
+    @keyframes shine {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
     }
     p {
       font-size: 1.2rem;
@@ -92,6 +115,7 @@
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #888;
+      font-style: italic;
     }
     @media screen and (max-width: 600px) {
       h1 {
@@ -111,7 +135,9 @@
 <body>
   <header>
     <h1>MUNT.AI</h1>
-    <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
+    <div class="subtitle">Munt jezelf in goud</div>
+    <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy!</div>
+    <p>Upload je foto en word vereeuwigd als keizer op een Romeinse munt. De digitale hype van nu, met een historische twist.</p>
   </header>
 
   <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
@@ -140,10 +166,6 @@
     </select>
   </div>
 
-  <div class="visitor-counter">
-    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
-  </div>
-
   <div class="prompt-box">
 Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
 
@@ -167,7 +189,12 @@ Design specifications:
 - The coin should look prestigious, powerful, and ancient
   </div>
 
+  <div class="visitor-counter">
+    🔥 Al <span id="visitorCount">1.729</span> bezoekers gebruikten deze prompt!
+  </div>
+
   <div class="footer">
+    Vita brevis, gloria aeterna. <br>
     © By KAS · Creator · Est 2025
   </div>
 </body>
