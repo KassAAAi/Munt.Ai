@@ -13,13 +13,14 @@
       padding: 0;
       text-align: center;
       position: relative;
-      z-index: 1;
+    }
+    main {
+      position: relative;
+      z-index: 2;
     }
     header {
       padding: 2rem;
       background-color: #1a1a1a;
-      position: relative;
-      z-index: 2;
     }
     h1 {
       font-size: 3rem;
@@ -129,21 +130,22 @@
 <body>
   <div class="pillar-left"></div>
   <div class="pillar-right"></div>
-  <header>
-    <h1>MUNT.AI</h1>
-    <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
-  </header>
-  <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
-  <div class="upload-section">
-    <label for="file-upload">Upload jouw foto:</label>
-    <input type="file" id="file-upload" accept="image/*">
-    <br>
-    <button class="download-btn">Download jouw munt</button>
-    <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
-  </div>
-  <img src="linkedin_profielfoto_mockup.jpg" alt="LinkedIn voorbeeld" style="max-width: 100%; margin: 2rem auto; display: block;">
-  <div class="prompt-box">
-    Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
+  <main>
+    <header>
+      <h1>MUNT.AI</h1>
+      <p>Laat jezelf slaan in goud – upload je foto en word vereeuwigd als keizer op een Romeinse munt.</p>
+    </header>
+    <img src="jouw_munt.jpg" alt="Voorbeeld munt" class="coin-preview">
+    <div class="upload-section">
+      <label for="file-upload">Upload jouw foto:</label>
+      <input type="file" id="file-upload" accept="image/*">
+      <br>
+      <button class="download-btn">Download jouw munt</button>
+      <button class="linkedin-share-btn">Bekijk LinkedIn voorbeeld</button>
+    </div>
+    <img src="linkedin_profielfoto_mockup.jpg" alt="LinkedIn voorbeeld" style="max-width: 100%; margin: 2rem auto; display: block;">
+    <div class="prompt-box">
+      Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
 
 - A laurel wreath (crown of leaves) on the head
 - A Roman imperial robe (toga)
@@ -163,9 +165,10 @@ Design specifications:
 - The coin’s rim should have authentic Roman beading or edge pattern
 - The background should be dark or neutral to highlight the golden shine
 - The coin should look prestigious, powerful, and ancient
-  </div>
-  <div class="footer">
-    © By KAS · Creator · Est 2025
-  </div>
+    </div>
+    <div class="footer">
+      © By KAS · Creator · Est 2025
+    </div>
+  </main>
 </body>
 </html>
