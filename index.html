@@ -134,12 +134,6 @@
     .chatgpt-link a:hover {
       text-decoration: underline;
     }
-    .help-message {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #aaa;
-      margin-top: 1rem;
-    }
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -159,9 +153,97 @@
   <header>
     <h1>MUNT.AI</h1>
     <div class="subtitle">Munt jezelf in goud</div>
-    <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy op LinkedIN en verander je profielfoto in goud! #Munt.Ai</div>
+    <div class="subtext">Upload je foto. Gebruik de prompt. Ontvang je eigen digitale aureus. Deel jouw keizerlijke legacy op LinkedIN!</div>
   </header>
 
-  <div class="help-message">Hulp nodig? Stuur me een DM</div>
+  <img src="munt_ai_voorbeeld.jpg" alt="Voorbeeld munt" class="coin-preview">
 
-  <!-- Remainder of the HTML stays unchanged -->
+  <div class="scroll-down" onclick="scrollToPrompt()">⬇️</div>
+
+  <div class="upload-section">
+    <a href="https://www.linkedin.com/in/kasper-lagendijk-a856076" target="_blank">
+      <button class="linkedin-share-btn">Connect met Managing Director Munt.Ai</button>
+    </a>
+  </div>
+
+  <div class="visitor-counter">
+    🔥 Al <span id="visitorCount">1</span> bezoekers gebruikten deze prompt!
+  </div>
+
+  <div class="prompt-box" id="promptText">
+Create a high-resolution digital image of a circular ancient Roman gold coin (aureus) with a historically authentic and weathered appearance. The coin should feature the embossed portrait of a modern person in realistic relief, modeled after the style of coins minted during the reign of Julius Caesar. The portrait should include:
+
+- A laurel wreath (crown of leaves) on the head
+- A Roman imperial robe (toga)
+- Distinct facial features with modern eyeglasses
+
+The engraved Latin-style inscriptions must be placed along the circular outer edge of the coin (not in horizontal alignment, but curved following the rim of the coin), just like authentic Roman coins.
+
+The edge of the coin must include:
+- At the top: "MUNT.AI"
+- On the left: "[ROEPNAAM]"
+- On the right: "[ROMEINSE STADNAAM]"
+- At the bottom: "[GEBOORTEJAAR IN ROMEINSE CIJFERS]"
+
+Design specifications:
+- The gold should look rich, slightly aged, and glistening
+- The relief should be deeply engraved and clearly visible
+- The coin’s rim should have authentic Roman beading or edge pattern
+- The background should be dark or neutral to highlight the golden shine
+- The coin should look prestigious, powerful, and ancient
+  </div>
+
+  <div class="city-selector">
+    <label for="roman-city"><strong>Extra inspiratie:</strong> Romeinse naam van jouw stad:</label>
+    <select id="roman-city">
+      <option value="ROTTERODAMUM">Rotterdam → Rotterodamum</option>
+      <option value="ULTRAJECTUM">Utrecht → Ultrajectum</option>
+      <option value="TRAJECTUM AD MOSAM">Maastricht → Trajectum ad Mosam</option>
+      <option value="LUGDUNUM BATAVORUM">Leiden → Lugdunum Batavorum</option>
+      <option value="NEOMAGUS">Nijmegen → Neomagus</option>
+      <option value="GRONINGAE">Groningen → Groningae</option>
+      <option value="HAGA COMITIS">Den Haag → Haga Comitis</option>
+      <option value="HARLINGA">Harlingen → Harlinga</option>
+      <option value="AMSTELLADAMUM">Amsterdam → Amstelladamum</option>
+      <option value="FLAVIOBATAVODAMUM">IJmuiden → Flaviobatavodamum</option>
+      <option value="BATAVODAMUM">Dordrecht → Batavodamum</option>
+      <option value="CAMPUS MARTIS">Kampen → Campus Martis</option>
+      <option value="NOVIOMAGUS">Venlo → Noviomagus</option>
+      <option value="HERCULANEUM">Heerlen → Herculaneum</option>
+      <option value="TRAJECTUM MAIOR">Zutphen → Trajectum Maior</option>
+      <option value="FRANEKERUM">Franeker → Franekerum</option>
+      <option value="DAVENTRIUM">Deventer → Daventrum</option>
+      <option value="ALPHENIUS">Alphen aan den Rijn → Alphenius</option>
+      <option value="FORUM HADRIANI">Voorburg → Forum Hadriani</option>
+      <option value="TILBURGIA">Tilburg → Tilburgia</option>
+    </select>
+  </div>
+
+  <button class="copy-btn" onclick="copyPrompt()">📋 Kopieer prompt</button>
+
+  <div class="chatgpt-link">
+    Geen ChatGPT? <a href="https://chat.openai.com" target="_blank">Klik hier om het gratis te gebruiken</a>
+  </div>
+
+  <div class="footer">
+    Vita brevis, gloria aeterna. <br>
+    © By KAS · Creator · Est 2025
+  </div>
+
+  <script>
+    function scrollToPrompt() {
+      document.getElementById("promptText").scrollIntoView({ behavior: "smooth" });
+    }
+    function copyPrompt() {
+      const promptText = document.getElementById("promptText").innerText;
+      navigator.clipboard.writeText(promptText).then(() => {
+        alert("Prompt gekopieerd!");
+        let count = localStorage.getItem("visitorCount") || 1729;
+        count++;
+        localStorage.setItem("visitorCount", count);
+        document.getElementById("visitorCount").innerText = count.toLocaleString();
+      });
+    }
+  </script>
+</body>
+</html>
